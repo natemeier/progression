@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root version="4.0.0">
+  <announcement text="Extension (Progression) loaded." font="emotefont" icon="rulesetlogo_5E" />
+
+  <properties>
+    <name>Progression</name>
+    <version>1.0.0</version>
+    <author>Nathan J. Meier</author>
+    <description>Simple extension to automate character level progression.</description>
+    <ruleset>
+      <name>5E</name>
+    </ruleset>
+  </properties>
+
+  <base>
+    <!-- Character experience map -->
+    <script name="experience" file="scripts/experience.lua" />
+    <!-- Next level experience automation -->
+    <includefile source="campaign/record_char_main.xml" />
+  </base>
+</root>

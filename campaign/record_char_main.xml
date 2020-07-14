@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+    <windowclass name="charsheet_classes" merge="join">
+        <sheetdata>
+            <!-- Load script to populate exp needed field based on character level -->
+            <number_charlevel name="level" mergerule="replace">
+                <script file="campaign/scripts/number_charlevel.lua" />
+                <anchored to="leveltitle" height="20" width="30">
+                    <top anchor="bottom" offset="10" />
+                    <left anchor="center" offset="-15" />
+                </anchored>
+                <frame name="fieldlight" offset="7,5,7,5" />
+                <readonly />
+            </number_charlevel>
+
+            <!-- Only let GM edit character experience -->
+            <number_dropadd name="exp" mergerule="replace">
+                <anchored to="exptitle" height="20" width="70">
+                    <top anchor="bottom" offset="10" />
+                    <right anchor="center" offset="-15" />
+                </anchored>
+                <description textres="char_tooltip_xp" />
+                <gmeditonly />
+            </number_dropadd>
+            
+            <!-- Only let extension modify exp needed -->
+            <basicnumber name="expneeded">
+                <anchored to="exptitle" height="20" width="70">
+                    <top anchor="bottom" offset="10" />
+                    <left anchor="center" offset="15" />
+                </anchored>
+                <description textres="char_tooltip_xpneeded" />
+                <readonly />
+            </basicnumber>
+
+        </sheetdata>
+    </windowclass>
+</root>
